@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 function Footer() {
   return (
     <>
-    <div className='bg-gray-800 text-white p-3 position-bottom'
+    <div className='bg-black text-white p-3 position-bottom'
     >
       <h4 className='text-center'> &copy;All rights reserved | 
-      <Link to={'https://github.com/apoorvvikram01'} className='mx-2 font-bold text-md hover:text-gray-300 text-white '>
-        Vist github : Apoorvvikram01 
+      <Link to={'https://github.com/apoorvvikram01'} target='_blank' className='mx-2 font-bold text-md hover:text-gray-300 text-white '>
+        Vist github : Apoorv Vikram 
       </Link>
        </h4>
     

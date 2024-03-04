@@ -23,7 +23,7 @@ function Header() {
                 <NavLink
                   to= {'/'} 
                   className={({isActive}) =>
-                  `block py-2 pr-4 pl-3 duration-200 ${isActive? 'text-orange-700':'text-gray-700'}  flex items-center transition-colors hover:text-blue-500 `
+                  `block py-2 pr-4 pl-3 duration-200 ${isActive? 'text-orange-700 border-b-4':'text-gray-700'}  flex items-center transition-colors hover:text-blue-500 `
               }
                   // className= "flex items-center transition-colors hover:text-blue-500  "
              >
@@ -34,7 +34,7 @@ function Header() {
                 <NavLink
                   to={"/register"}
                   className= {({isActive}) =>
-                  `block py-2 pr-4 pl-3 duration-200 ${isActive? 'text-orange-700':'text-gray-700'}  flex items-center transition-colors hover:text-blue-500 `
+                  `block py-2 pr-4 pl-3 duration-200 ${isActive? 'text-orange-700 border-b-4':'text-gray-700'}  flex items-center transition-colors hover:text-blue-500 `
             }
                 >
                   Register
@@ -45,7 +45,7 @@ function Header() {
                   to={"/categories"}
                  
                   className= {({isActive}) =>
-                  `block py-2 pr-4 pl-3 duration-200 ${isActive? 'text-orange-700':'text-gray-700'}  flex items-center transition-colors hover:text-blue-500 `
+                  `block py-2 pr-4 pl-3 duration-200 ${isActive? 'text-orange-700 border-b-4':'text-gray-700'}  flex items-center transition-colors hover:text-blue-500 `
             }
                 >
                   Categories
@@ -56,7 +56,7 @@ function Header() {
                   to={"/login"}
                  
                   className= {({isActive}) =>
-                  `block py-2 pr-4 pl-3 duration-200 ${isActive? 'text-orange-700':'text-gray-700'}  flex items-center transition-colors hover:text-blue-500 `
+                  `block py-2 pr-4 pl-3 duration-200 ${isActive? 'text-orange-700 border-b-4':'text-gray-700'}  flex items-center transition-colors hover:text-blue-500 `
             }
                 >
                   Login
@@ -67,7 +67,7 @@ function Header() {
                   to={"/cart"}
                  
                   className= {({isActive}) =>
-                  `block py-2 pr-4 pl-3 duration-200 ${isActive? 'text-orange-700':'text-gray-700'}  flex items-center transition-colors hover:text-blue-500 `
+                  `block py-2 pr-4 pl-3 duration-200 ${isActive? 'text-orange-700 border-b-4':'text-gray-700'}  flex items-center transition-colors hover:text-blue-500 `
             }
                 >
                   Cart(0)
