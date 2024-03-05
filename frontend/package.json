@@ -1,6 +1,7 @@
 {
   "name": "frontend",
   "private": true,
+  "proxy":"http://localhost:8080",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -11,13 +12,15 @@
   },
   "dependencies": {
     "@material-tailwind/html": "^2.2.2",
+    "axios": "^1.6.7",
     "flowbite": "^2.3.0",
     "flowbite-react": "^0.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^5.0.1",
-    "react-router-dom": "^6.22.2"
+    "react-router-dom": "^6.22.2",
+    "react-toastify": "^10.0.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",

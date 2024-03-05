@@ -4,12 +4,13 @@ import dotenv from 'dotenv';
 import connectDB from './backend/db/index.js';
 import {authRoutes} from "./backend/routes/authRoutes.js"
 import morgan from 'morgan';
-
+import cors from 'cors';
 
 //Rest object
 const app = express();
 
 //middlewares
+app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 
