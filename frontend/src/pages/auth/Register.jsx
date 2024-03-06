@@ -1,9 +1,10 @@
 import React,{useState} from 'react'
 import Layout from '../../components/layouts/Layout'
-import {toast} from 'react-toastify'
+import toast,{Toaster} from 'react-hot-toast'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
-
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 
 function Register() {
     const [name,setName] = useState("")
@@ -99,10 +100,10 @@ if(res && res.data.success) {
             </div>
             <div className="flex justify-center">
               <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline"
+                className="bg-blue-500 hover:bg-blue-700 uppercase text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline"
                 type="submit"
               >
-                Submit
+                Register
               </button>
             </div>
           </form>

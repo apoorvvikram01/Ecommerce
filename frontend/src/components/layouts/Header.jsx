@@ -1,8 +1,18 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { GiShoppingBag } from "react-icons/gi";
+import { useAuth } from "../../context/Auth";
+import { Toast } from "react-hot-toast";
 
 function Header() {
+  const [auth,setAuth] = useAuth()
+  const handleLogout= () =>{
+    setAuth({
+      ...auth, user: null,token : ''
+    })
+    localStorage.removeItem('auth');
+    toast.success('Logged out successfully')
+  }
   return (
     <>
       <nav className="block w-full max-w-screen-xl px-6 py-3 mx-auto text-white bg-white border shadow-md rounded-xl border-white/80 bg-opacity-80 backdrop-blur-2xl backdrop-saturate-200 uppercase font-semibold ">
@@ -30,16 +40,7 @@ function Header() {
                   Home
                 </NavLink>
               </li>
-              <li className="block p-1 font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900">
-                <NavLink
-                  to={"/register"}
-                  className= {({isActive}) =>
-                  `block py-2 pr-4 pl-3 duration-200 ${isActive? 'text-orange-700 border-b-4':'text-gray-700'}  flex items-center transition-colors hover:text-blue-500 `
-            }
-                >
-                  Register
-                </NavLink>
-              </li>
+             
               <li className="block p-1 font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900">
                 <NavLink
                   to={"/categories"}
@@ -49,6 +50,20 @@ function Header() {
             }
                 >
                   Categories
+                </NavLink>
+              </li>
+             
+            {
+              !auth.user? (
+                <>
+                 <li className="block p-1 font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900">
+                <NavLink
+                  to={"/register"}
+                  className= {({isActive}) =>
+                  `block py-2 pr-4 pl-3 duration-200 ${isActive? 'text-orange-700 border-b-4':'text-gray-700'}  flex items-center transition-colors hover:text-blue-500 `
+            }
+                >
+                  Register
                 </NavLink>
               </li>
               <li className="block p-1 font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900">
@@ -62,6 +77,24 @@ function Header() {
                   Login
                 </NavLink>
               </li>
+                </>
+              ) : (
+                <>
+                  <li className="block p-1 font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900">
+                <NavLink
+                  to={"/login"} onClick={handleLogout}
+                 
+                  className= {({isActive}) =>
+                  `block py-2 pr-4 pl-3 duration-200 ${isActive? 'text-orange-700 border-b-4':'text-gray-700'}  flex items-center transition-colors hover:text-blue-500 `
+            }
+                >
+                  Logout
+                </NavLink>
+              </li>
+                </>
+              )
+            }
+
               <li className="block p-1 font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900">
                 <NavLink
                   to={"/cart"}
